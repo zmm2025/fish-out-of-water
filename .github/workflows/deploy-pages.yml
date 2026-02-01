@@ -19,15 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Godot
-        uses: godotengine/godot-actions/setup-godot@v4
-        with:
-          godot-version: "4.2-stable"
-          export-templates: true
-
       - name: Export Web
-        run: godot --headless --export-release "Web" docs/index.html
-        # If your preset exports to docs/fish-out-of-water.html, use that path instead.
+        uses: robpc/godot-export-action@v4.3
+        with:
+          preset: "Web"
+          export_path: "docs/fish-out-of-water.html"
 
       - name: Add CNAME for custom domain
         run: echo "ggj2026.zain.build" > docs/CNAME

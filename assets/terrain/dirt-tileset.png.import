@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kgo72r1m24c1"
-path="res://.godot/imported/kelp.png-074fa709485841ced4afc6db54030fea.ctex"
+uid="uid://c0xr7tmpqxvo0"
+path="res://.godot/imported/dirt-tileset.png-3695cb4b118ff1fd5ed9d537b9967abd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/nature/kelp.png"
-dest_files=["res://.godot/imported/kelp.png-074fa709485841ced4afc6db54030fea.ctex"]
+source_file="res://assets/terrain/dirt-tileset.png"
+dest_files=["res://.godot/imported/dirt-tileset.png-3695cb4b118ff1fd5ed9d537b9967abd.ctex"]
 
 [params]
 

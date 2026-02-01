@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://roet77vkfdtu"]
 
 [ext_resource type="PackedScene" uid="uid://csdoyld3oeg4n" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://c0xr7tmpqxvo0" path="res://assets/tilesets/dirt-tileset.png" id="2_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://eurytgrytqua" path="res://assets/tilesets/sand-tileset.png" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://c0xr7tmpqxvo0" path="res://assets/terrain/dirt-tileset.png" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://eurytgrytqua" path="res://assets/terrain/sand-tileset.png" id="3_lbhrr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 resource_name = "Dirt"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eurytgrytqua"
-path="res://.godot/imported/sand-tileset.png-a9581bb4756d8286b0e4f0ab2163a299.ctex"
+uid="uid://kgo72r1m24c1"
+path="res://.godot/imported/kelp.png-b69cef44988eb23f681f1ef8116c8960.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/sand-tileset.png"
-dest_files=["res://.godot/imported/sand-tileset.png-a9581bb4756d8286b0e4f0ab2163a299.ctex"]
+source_file="res://assets/decorations/kelp.png"
+dest_files=["res://.godot/imported/kelp.png-b69cef44988eb23f681f1ef8116c8960.ctex"]
 
 [params]
 

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://b4oss3nc0unt3r"]
+
+[ext_resource type="Script" path="res://scripts/boss_encounter_config.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+pre_black_duration = 2.0
+black_duration = 1.0
+black_color = Color(0, 0, 0, 1)
+boss_position_x = 104.0
+boss_position_y = -40.0
+camera_padding = 24.0
+camera_initial_zoom = 4.0
+boss_protection_margin = 0
+boss_sprite_path = "res://assets/characters/boss-sea-urchin/boss-sea-urchin.png"
+camera_floor_limit = 80.0

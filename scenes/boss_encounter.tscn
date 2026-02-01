@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bukjq2qyhmbb7"]
+
+[ext_resource type="Script" path="res://scripts/boss_encounter.gd" id="1_script"]
+
+[node name="BossEncounter" type="Node"]
+script = ExtResource("1_script")
+
+[node name="EncounterOverlay" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="EncounterOverlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+color = Color(0, 0, 0, 1)
+visible = false
+
+[node name="BossCamera" type="Camera2D" parent="."]
+position = Vector2(0, 0)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+enabled = false

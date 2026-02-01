@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bc4i21rt1edq1" path="res://scripts/sea_background_rect.gd" id="5_searect"]
 [ext_resource type="PackedScene" uid="uid://y62ohhstmarh" path="res://scenes/enemy.tscn" id="6_enemy"]
 [ext_resource type="Script" uid="uid://c5urex7wsmvfj" path="res://scripts/game.gd" id="7_game"]
+[ext_resource type="PackedScene" uid="uid://bukjq2qyhmbb7" path="res://scenes/boss_encounter.tscn" id="8_boss"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_seabg"]
 shader = ExtResource("4_seabg")
@@ -92,3 +93,5 @@ position_smoothing_enabled = true
 [node name="Enemy" parent="." unique_id=814357175 instance=ExtResource("6_enemy")]
 position = Vector2(104, 41)
 detection_radius = 15.0
+
+[node name="BossEncounter" parent="." unique_id=1809790683 instance=ExtResource("8_boss")]

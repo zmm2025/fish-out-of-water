@@ -1,20 +1,77 @@
 [gd_scene format=3 uid="uid://y62ohhstmarh"]
 
 [ext_resource type="Texture2D" uid="uid://2v3xjncsn1cc" path="res://assets/characters/baby-sea-urchin.png" id="1_texture"]
+[ext_resource type="Texture2D" uid="uid://dc4mpnceyvme5" path="res://assets/characters/boss-sea-urchin/boss-sea-urchin.png" id="2_boss_texture"]
 [ext_resource type="Script" uid="uid://ciulvs0mgen61" path="res://scripts/enemy.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://cvsgodswqtst5" path="res://scripts/hitbox.gd" id="3_hitbox"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_detect"]
-radius = 80.0
+radius = 15.0
 
-[node name="Enemy" type="Area2D" unique_id=821367960]
-collision_layer = 0
+[sub_resource type="CircleShape2D" id="CircleShape2D_small_hitbox"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_small_body"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hitbox"]
+radius = 38.013157
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boss_body"]
+radius = 38.0
+
+[node name="Enemy" type="Node2D" unique_id=821367960]
 script = ExtResource("2_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=217285694]
+[node name="SmallForm" type="Node2D" parent="." unique_id=1530632093]
+
+[node name="Sprite2D" type="Sprite2D" parent="SmallForm" unique_id=217285694]
 texture = ExtResource("1_texture")
 
-[node name="DetectionShape" type="CollisionShape2D" parent="." unique_id=1461833410]
+[node name="DetectionArea" type="Area2D" parent="SmallForm" unique_id=1106785989]
+collision_layer = 0
+
+[node name="DetectionShape" type="CollisionShape2D" parent="SmallForm/DetectionArea" unique_id=1461833410]
 shape = SubResource("CircleShape2D_detect")
+
+[node name="Hitbox" type="Area2D" parent="SmallForm" unique_id=230686284]
+collision_layer = 2
+monitoring = false
+monitorable = false
+script = ExtResource("3_hitbox")
+hitbox_radius = 8.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallForm/Hitbox" unique_id=590908829]
+shape = SubResource("CircleShape2D_small_hitbox")
+
+[node name="SolidBody" type="StaticBody2D" parent="SmallForm" unique_id=1935776389]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallForm/SolidBody" unique_id=1958710536]
+shape = SubResource("CircleShape2D_small_body")
+
+[node name="BossForm" type="Node2D" parent="." unique_id=33998256]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="BossForm" unique_id=523534333]
+texture = ExtResource("2_boss_texture")
+
+[node name="Hitbox" type="Area2D" parent="BossForm" unique_id=1064388631]
+collision_layer = 2
+monitoring = false
+monitorable = false
+script = ExtResource("3_hitbox")
+hitbox_radius = 54.378304
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossForm/Hitbox" unique_id=1769240644]
+shape = SubResource("CircleShape2D_hitbox")
+
+[node name="SolidBody" type="StaticBody2D" parent="BossForm" unique_id=2094859773]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossForm/SolidBody" unique_id=620057358]
+shape = SubResource("CircleShape2D_boss_body")
 
 [node name="DialogueLabel" type="Label" parent="." unique_id=870114623]
 visible = false

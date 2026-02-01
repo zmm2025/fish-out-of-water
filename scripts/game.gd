@@ -22,12 +22,16 @@ func _process(_delta: float) -> void:
 	if not player or not camera:
 		return
 
+	var boss_encounter := get_node_or_null("BossEncounter")
+	if boss_encounter and boss_encounter.is_encounter_active:
+		# Boss encounter handles its own camera when active; skip normal camera logic.
+		return
+
 	var view_size := get_viewport().get_visible_rect().size
 	var half_view_y := (view_size.y / 2.0) / camera.zoom.y
 	var max_camera_center_y := camera_min_bottom_height - half_view_y
 
 	if camera.get_parent() == player:
-		# Prefer centered on player; only offset when the floor would be visible below the limit.
 		var centered_global_y := player.global_position.y
 		if centered_global_y <= max_camera_center_y:
 			camera.position.y = 0.0
@@ -48,5 +52,9 @@ func _get_main_camera() -> Camera2D:
 
 
 func _on_enemy_player_entered_range(player: CharacterBody2D, enemy: Node2D) -> void:
-	player.movement_locked = true
-	enemy.show_dialogue_line("...huh?")
+	var boss_encounter := get_node_or_null("BossEncounter")
+	if boss_encounter and boss_encounter.has_method("start_encounter"):
+		boss_encounter.start_encounter(player, enemy)
+	else:
+		player.movement_locked = true
+		enemy.show_dialogue_line("...huh?")

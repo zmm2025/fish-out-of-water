@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+Always change as little as required in the codebase, and document exactly what changes were made nad where they can be found or edited in the Godot UI.

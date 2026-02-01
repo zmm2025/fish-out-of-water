@@ -55,6 +55,22 @@ sources/1 = SubResource("TileSetAtlasSource_p57ef")
 
 [node name="Game" type="Node2D" unique_id=108318808]
 
+[node name="SeaBackground" type="CanvasLayer" parent="." unique_id=552912495]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="SeaBackground" unique_id=190471743]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.22, 0.45, 0.78, 1)
+
 [node name="Player" parent="." unique_id=2004395378 instance=ExtResource("1_uwrxv")]
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=592717699]

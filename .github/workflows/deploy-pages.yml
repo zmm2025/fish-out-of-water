@@ -28,6 +28,10 @@ jobs:
       - name: Add CNAME for custom domain
         run: echo "ggj2026.zain.build" > docs/CNAME
 
+      - name: Add root redirect (index.html)
+        run: |
+          echo '<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=fish-out-of-water.html"><title>Fish Out of Water</title></head><body><p>Redirecting to <a href="fish-out-of-water.html">Fish Out of Water</a>...</p></body></html>' > docs/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
